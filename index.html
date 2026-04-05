@@ -1,10 +1,67 @@
+<!DOCTYPE html>
 <html>
-    <head>
+<head>
+    <meta charset="utf-8">
+    <title>AR Custom Marker Demo</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            z-index: 100;
+        }
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            z-index: 200;
+        }
+        #error {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,0,0,0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            z-index: 200;
+            max-width: 80%;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <strong>Кастомний маркер AR</strong><br>
+        1. Куб (зелений) - MeshStandardMaterial<br>
+        2. Сфера (синя) - MeshPhongMaterial<br>
+        3. Тор (червоний) - MeshLambertMaterial
+    </div>
+    <div id="loading">Завантаження... Ініціалізація камери...</div>
+    <div id="error"></div>
 
-    </head>
-    <body>
-        Dmytro Lisenko I-22 - Дмитро Лисенко І-22
-
-        
-    </body>
+    <!-- Three.js (сумісна версія з AR.js) -->
+    <script src="https://unpkg.com/three@0.120.1/build/three.min.js"></script>
+    <!-- AR.js -->
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@2.2.2/three.js/build/ar.js"></script>
+    <!-- Головний скрипт -->
+    <script src="main.js"></script>
+</body>
 </html>
